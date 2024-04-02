@@ -43,12 +43,23 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Drawer Header', style: TextStyle(fontSize: 30),),
+              child: Text(
+                'Drawer Header',
+                style: TextStyle(fontSize: 30),
+              ),
             ),
             ListTile(
               title: const Text('Home'),
               onTap: () {
-
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text("I am SnackBar"),
+                  duration: Duration(seconds: 2),
+                  behavior: SnackBarBehavior.floating,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  action: SnackBarAction(label: "OK", onPressed: () {}),
+                ));
               },
             ),
             ListTile(
